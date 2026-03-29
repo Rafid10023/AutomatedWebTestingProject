@@ -1,0 +1,23 @@
+package webtests.runner;
+
+
+
+import io.cucumber.junit.CucumberOptions;
+import net.serenitybdd.cucumber.CucumberWithSerenity;
+import org.junit.runner.RunWith;
+
+@RunWith(CucumberWithSerenity.class)
+@CucumberOptions(
+        features = "src/test/resources/features",
+        glue = "webtests.steps",
+//        tags = "@Happy",
+        plugin = {
+                "pretty",
+                "html:target/testReport.html",
+                "json:target/testReport.json"
+
+        },
+        publish = true
+)
+public class TestRunner {
+}
