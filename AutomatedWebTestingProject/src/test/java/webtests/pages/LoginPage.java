@@ -28,10 +28,6 @@ public class LoginPage extends PageObject{
     private WebElementFacade blueTopViewProduct;
 
 
-
-
-
-
     public void acceptConsentIfPresent() {
         try {
             if (consentButton.isCurrentlyVisible()) {
