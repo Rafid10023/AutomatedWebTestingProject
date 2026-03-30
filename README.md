@@ -7,5 +7,5 @@ The website itself is a mock-up of a store where a user can register to the webs
  
 Our testing methods will include using Exploratory Testing, Unit Testing and Gherkin to represent acceptance tests for our user stories. 
  
-testing to see if i can push on the rafid branch
+testing to see if i can push on the rafid branchasdf
 
