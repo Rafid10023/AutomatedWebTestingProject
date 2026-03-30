@@ -25,10 +25,6 @@ public class LoginPage extends PageObject{
     private WebElementFacade logoutButton;
 
 
-
-
-
-
     public void acceptConsentIfPresent() {
         try {
             if (consentButton.isCurrentlyVisible()) {
