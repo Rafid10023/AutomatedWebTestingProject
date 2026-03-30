@@ -16,6 +16,7 @@ public class ContactUsFormSteps {
     @Given("I am on the Contact Us page")
     public void iAmOnTheContactUsPage() {
         contactUsPage.open();
+        contactUsPage.acceptConsentIfPresent();
     }
 
     @And("I have entered the name {string}")
