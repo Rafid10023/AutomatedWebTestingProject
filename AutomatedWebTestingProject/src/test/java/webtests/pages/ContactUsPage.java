@@ -48,10 +48,6 @@ public class ContactUsPage extends PageObject {
         messageField.type(message);
     }
 
-    public void clickChooseFileButton() {
-        chooseFileButton.click();
-    }
-
     public void clickSubmitButton() {
         submitButton.click();
     }
