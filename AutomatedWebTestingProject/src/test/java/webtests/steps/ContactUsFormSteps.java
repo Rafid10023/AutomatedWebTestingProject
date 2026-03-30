@@ -50,7 +50,7 @@ public class ContactUsFormSteps {
         contactUsPage.accecptAlert();
     }
 
-    @Then("I should see the verification message \"Success! Your details have been submitter successfully\"")
+    @Then("I should see the verification message \"Success! Your details have been submitter successfully'")
     public void iShouldSeeTheVerificationMessageSuccessYourDetailsHaveBeenSubmitterSuccessfully(){
         MatcherAssert.assertThat(contactUsPage.getConfirmationMessage(), Matchers.is(true));
     }
