@@ -24,6 +24,9 @@ public class LoginPage extends PageObject{
     @FindBy(xpath = "//a[contains(text(),'Logout')]")
     private WebElementFacade logoutButton;
 
+    @FindBy(xpath = "//p[text()='Blue Top']/ancestor::div[@class='product-image-wrapper']//a[contains(text(),'View Product')]")
+    private WebElementFacade blueTopViewProduct;
+
 
 
 

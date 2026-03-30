@@ -1,5 +1,6 @@
 package webtests.WithoutGherkin;
 
+
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import net.thucydides.core.annotations.Managed;
 import org.hamcrest.MatcherAssert;
@@ -11,24 +12,20 @@ import webtests.pages.LoginPage;
 
 
 @ExtendWith(SerenityJUnit5Extension.class)
-public class LoginTests {
-
+public class HomePageLogin {
     @Managed
-    HomePageRafid loginPage;
+    HomePageRafid homePage;
 
     @Test
-    public void successEnterUser(){
-        loginPage.open();
-        loginPage.acceptConsentIfPresent();
-        loginPage.enterSubscriptionEmail("rafiduddin18@gmail.com");
-        loginPage.clickSubscribeButton();
-
+    public void CheckingTheBlueShirt(){
+        homePage.open();
+        homePage.acceptConsentIfPresent();
+        homePage.clickBlueTopViewProduct();
 
         MatcherAssert.assertThat(
-                loginPage.didSubscriptionSucceed(),
+                homePage.isCorrectProductDisplayed("Blue Top"),
                 Matchers.is(true)
         );
 
     }
-
 }
