@@ -31,6 +31,18 @@ public class ContactUsPage extends PageObject {
     @FindBy(xpath = "//div[@class='status alert alert-success']")
     private WebElementFacade successVerification;
 
+    @FindBy(css = "button[aria-label='Consent']")
+    private WebElementFacade consentButton;
+
+    public void acceptConsentIfPresent() {
+        try {
+            if (consentButton.isCurrentlyVisible()) {
+                consentButton.click();
+            }
+        } catch (Exception e) {
+            // ignore if not present
+        }
+    }
 
     public void enterName(String name) {
         nameField.type(name);
