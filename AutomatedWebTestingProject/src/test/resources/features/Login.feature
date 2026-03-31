@@ -1,7 +1,9 @@
-Feature: Login functionality
+Feature: User Account Management
 
-  As a shmuck user of this website
-  I want to be able to login
+  As a customer
+  I want to manage my account
+  So that I can use the website securely
+
 
   @Happy
   Scenario Outline: Successful login with valid credentials
@@ -14,3 +16,16 @@ Feature: Login functionality
     Examples:
       | email                   | password         |
       | Rafiduddin18@gmail.com  | zxcvasdf123 |
+
+  @Sad
+  Scenario: Unsuccessful login with invalid credentials
+    Given I am on the login page to put in wrong password
+    When I enter an invalid email and password
+    And I click the login button with wrong password
+    Then I should see a login error message
+
+
+  Scenario: Successful logout
+    Given I am logged in
+    When I click the logout button
+    Then I should be logged out
