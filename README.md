@@ -108,7 +108,7 @@ Test 9 | Verify Subscription in home page
 Test 10 | Verify Subscription in Cart page
 Test 11 | Add Products in Cart
 Test 12 | Verify Product quantity in Cart
-Test 13 | Place Order: Register while Checkout
+Test 13 | Checking out a product
 Test 14 | Add review on product
 Test 15 | Add cart from Recommended Items
 Test 16 | Scroll Up using 'Arrow Button'
