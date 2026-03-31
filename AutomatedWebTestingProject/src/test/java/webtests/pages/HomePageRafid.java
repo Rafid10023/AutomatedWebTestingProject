@@ -173,6 +173,7 @@ public class HomePageRafid extends PageObject {
 
     public void clickContinueShopping() {
         continueShoppingButton.waitUntilClickable().click();
+    }
 
     public void clickScrollUpButton() {
         scrollUp.click();
