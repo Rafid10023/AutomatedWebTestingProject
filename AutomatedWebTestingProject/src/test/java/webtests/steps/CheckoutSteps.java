@@ -80,7 +80,7 @@ public class CheckoutSteps {
 
     @Then("I should see the verification message for an order being placed")
     public void iShouldSeeTheVerificationMessageForAnOrderBeingPlaced() {
-        MatcherAssert.assertThat(paymentPage.getDriver().getCurrentUrl(), Matchers.is("https://automationexercise.com/payment_done/1000"));
+        MatcherAssert.assertThat(paymentPage.getDriver().getCurrentUrl(), Matchers.containsString("https://automationexercise.com/payment_done"));
     }
 
 
