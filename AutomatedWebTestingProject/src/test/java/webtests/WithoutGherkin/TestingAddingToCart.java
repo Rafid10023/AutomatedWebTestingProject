@@ -9,30 +9,26 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import webtests.pages.HomePageRafid;
 import webtests.pages.LoginPage;
 
-
 @ExtendWith(SerenityJUnit5Extension.class)
-public class LoginTests {
+public class TestingAddingToCart {
 
 
     HomePageRafid loginPage;
-
     @Test
     public void successEnterUser(){
         loginPage.open();
-        System.out.println("done 1");
         loginPage.acceptConsentIfPresent();
         System.out.println("done 2");
-        loginPage.enterSubscriptionEmail("rafiduddin18@gmail.com");
+        loginPage.clickAddToCart();
         System.out.println("done 3");
-        loginPage.clickSubscribeButton();
+
+        loginPage.clickViewCart();
         System.out.println("done 4");
 
 
         MatcherAssert.assertThat(
-                loginPage.didSubscriptionSucceed(),
+                loginPage.isBlueTopInCart(),
                 Matchers.is(true)
         );
 
-    }
-
-}
+}}

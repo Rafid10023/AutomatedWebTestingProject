@@ -30,7 +30,7 @@ public class HomePageRafid extends PageObject {
     @FindBy(xpath = "//h2[contains(text(),'Women - Dress Products')]")
     private WebElementFacade womenDressTitle;
 
-    @FindBy(id = "subscribe_email")
+    @FindBy(id = "susbscribe_email")
     private WebElementFacade subscriptionEmailInput;
 
     @FindBy(id = "subscribe")
@@ -38,6 +38,24 @@ public class HomePageRafid extends PageObject {
 
     @FindBy(css = "div.alert-success")
     private WebElementFacade successMessage;
+
+    @FindBy(css = "a.add-to-cart")
+    private WebElementFacade addToCartButton;
+
+    @FindBy(css = "a[href='/view_cart']")
+    private WebElementFacade viewCartLink;
+
+    @FindBy(css = "td.cart_description h4 a")
+    private WebElementFacade productNameInCart;
+
+    @FindBy(id = "cartModal")
+    private WebElementFacade cartModal;
+
+    @FindBy(xpath = "//h4[contains(text(),'Added!')]")
+    private WebElementFacade addedModalTitle;
+
+    @FindBy(css = "button.close-modal")
+    private WebElementFacade continueShoppingButton;
 
     public void acceptConsentIfPresent() {
         try {
@@ -95,7 +113,8 @@ public class HomePageRafid extends PageObject {
     }
 
     public void enterSubscriptionEmail(String email) {
-        subscriptionEmailInput.waitUntilVisible().type(email);
+        evaluateJavascript("window.scrollTo(0, document.body.scrollHeight);");
+        subscriptionEmailInput.type(email);
     }
 
     public void clickSubscribeButton() {
@@ -104,10 +123,35 @@ public class HomePageRafid extends PageObject {
 
     public boolean didSubscriptionSucceed() {
         try {
-            successMessage.waitUntilVisible(); // waits until it appears
-            return successMessage.getText().contains("successfully subscribed");
+            return successMessage.waitUntilVisible()
+                    .containsText("successfully subscribed");
         } catch (Exception e) {
             return false;
         }
+    }
+    public void clickAddToCart() {
+
+        evaluateJavascript("window.scrollBy(0, 300);");
+        addToCartButton.click();
+    }
+
+    public void clickViewCart() {
+        viewCartLink.click();
+    }
+    public boolean isBlueTopInCart() {
+        return productNameInCart.getText().equalsIgnoreCase("Blue Top");
+    }
+
+    public boolean isAddToCartConfirmationDisplayed() {
+        try {
+            return cartModal.waitUntilVisible().isCurrentlyVisible()
+                    && addedModalTitle.containsText("Added!");
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public void clickContinueShopping() {
+        continueShoppingButton.waitUntilClickable().click();
     }
 }
