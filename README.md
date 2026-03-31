@@ -112,9 +112,9 @@ Test 13 | Place Order: Register while Checkout
 Test 14 | Add review on product
 Test 15 | Add cart from Recommended Items
 Test 16 | Scroll Up using 'Arrow Button'
+Test 17 | Verify Checking out a product
 
-
-
+## Testing Metrics:
 
 
 
