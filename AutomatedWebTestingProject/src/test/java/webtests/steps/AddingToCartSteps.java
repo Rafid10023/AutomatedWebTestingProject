@@ -58,4 +58,30 @@ public class AddingToCartSteps {
         // Write code here that turns the phrase above into concrete actions
         addCart.clickContinueShopping();
     }
+
+    @When("I add the Blue Top product to the cart and the Men Tshirt")
+    public void iAddTheBlueTopProductToTheCartAndTheMenTshirt() {
+        // Write code here that turns the phrase above into concrete actions
+        addCart.clickAddToCart();
+        addCart.clickContinueShopping();
+        addCart.clickMenTshirtAddToCart();
+    }
+
+    @Then("the products should be added to the cart with a confirmation")
+    public void theProductsShouldBeAddedToTheCartWithAConfirmation() {
+        // Write code here that turns the phrase above into concrete actions
+        MatcherAssert.assertThat(
+                addCart.isAddToCartConfirmationDisplayed(),
+                Matchers.is(true)
+        );
+
+    }
+
+    @And("I when i click on the carts the two products should be there")
+    public void iWhenIClickOnTheCartsTheTwoProductsShouldBeThere() {
+        // Write code here that turns the phrase above into concrete actions
+        addCart.clickViewCartFromModal();
+        MatcherAssert.assertThat(addCart.getTotalQuantity(), Matchers.is(2));
+
+    }
 }
