@@ -15,7 +15,7 @@ Feature: Add products to cart
   Scenario: User adds a product to the cart then verify number of products in cart
     Given I am on the homepage to buy something
     When I add the Blue Top product to the cart and the Men Tshirt
-    Then the product should be added to the cart with a confirmation
-    And I can continue shopping
+    Then the products should be added to the cart with a confirmation
+    And I when i click on the carts the two products should be there
 
 

@@ -6,6 +6,8 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
 
+import java.util.List;
+
 @DefaultUrl("https://automationexercise.com/")
 public class HomePageRafid extends PageObject {
 
@@ -56,6 +58,15 @@ public class HomePageRafid extends PageObject {
 
     @FindBy(css = "button.close-modal")
     private WebElementFacade continueShoppingButton;
+
+    @FindBy(xpath = "//p[text()='Men Tshirt']/ancestor::div[@class='product-image-wrapper']//a[contains(@class,'add-to-cart')]")
+    private WebElementFacade menTshirtAddToCartButton;
+
+    @FindBy(css = "td.cart_quantity button")
+    private List<WebElementFacade> quantityElements;
+
+    @FindBy(css = "#cartModal a[href='/view_cart']")
+    private WebElementFacade viewCartModalLink;
 
     public void acceptConsentIfPresent() {
         try {
@@ -153,5 +164,23 @@ public class HomePageRafid extends PageObject {
 
     public void clickContinueShopping() {
         continueShoppingButton.waitUntilClickable().click();
+    }
+    public void clickMenTshirtAddToCart() {
+        menTshirtAddToCartButton.waitUntilClickable().click();
+    }
+
+    public int getTotalQuantity() {
+        int total = 0;
+
+        for (WebElementFacade quantity : quantityElements) {
+            String text = quantity.getText().trim();
+            total += Integer.parseInt(text);
+        }
+
+        return total;
+    }
+
+    public void clickViewCartFromModal() {
+        viewCartModalLink.waitUntilClickable().click();
     }
 }
