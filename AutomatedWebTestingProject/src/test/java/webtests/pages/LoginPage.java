@@ -43,6 +43,8 @@ public class LoginPage extends PageObject {
 
     @FindBy(css = "p[style='color: red;']")
     private WebElementFacade emailExistsError;
+    @FindBy(xpath = "//p[text()='Blue Top']/ancestor::div[@class='product-image-wrapper']//a[contains(text(),'View Product')]")
+    private WebElementFacade blueTopViewProduct;
 
 
     // -------- Actions --------

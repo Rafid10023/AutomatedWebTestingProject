@@ -6,6 +6,7 @@ import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import webtests.pages.HomePageRafid;
 import webtests.pages.LoginPage;
 
 
@@ -13,7 +14,7 @@ import webtests.pages.LoginPage;
 public class LoginTests {
 
     @Managed
-    LoginPage loginPage;
+    HomePageRafid loginPage;
 
     @Test
     public void successEnterUser() {
@@ -23,9 +24,12 @@ public class LoginTests {
         loginPage.enterPass("sdfighoias");
         loginPage.clickLoginButton();
         loginPage.getErrorMessage();
+        loginPage.enterSubscriptionEmail("rafiduddin18@gmail.com");
+        loginPage.clickSubscribeButton();
+
 
         MatcherAssert.assertThat(
-                loginPage.isLogoutVisible(),
+                loginPage.didSubscriptionSucceed(),
                 Matchers.is(true)
         );
 
