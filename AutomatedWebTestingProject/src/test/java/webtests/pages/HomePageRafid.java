@@ -201,3 +201,4 @@ public class HomePageRafid extends PageObject {
         viewCartModalLink.waitUntilClickable().click();
     }
 }
+

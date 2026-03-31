@@ -14,7 +14,9 @@ public class CheckoutPage extends PageObject {
 
     // Proceed to checkout button
     @FindBy(css = "a.check_out")
-    private WebElementFacade checkoutButton;
+    private WebElementFacade placeOrder;
+
+
 
     public void acceptConsentIfPresent() {
         try {
@@ -26,6 +28,6 @@ public class CheckoutPage extends PageObject {
         }
     }
 
-    public void checkoutButton() { checkoutButton.click(); }
+    public void placeOrderButton() { placeOrder.click(); }
 
 }

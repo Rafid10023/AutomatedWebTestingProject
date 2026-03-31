@@ -30,6 +30,7 @@ public class PaymentPage extends PageObject{
     @FindBy(id = "submit")
     private WebElementFacade submitButton;
 
+
     public void acceptConsentIfPresent() {
         try {
             if (consentButton.isCurrentlyVisible()) {
