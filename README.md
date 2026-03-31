@@ -113,6 +113,9 @@ Test 14 | Add review on product
 Test 15 | Add cart from Recommended Items
 Test 16 | Scroll Up using 'Arrow Button'
 
+## Test Metrics:
+
+<img width="1673" height="1181" alt="image" src="https://github.com/user-attachments/assets/25f52cef-c242-49ee-83bd-1a0facb71ccf" />
 
 
 
