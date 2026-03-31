@@ -29,7 +29,6 @@ public class ContactUsFormSteps {
         contactUsPage.enterEmail(email);
     }
 
-
     @And("I have entered the subject {string}")
     public void iHaveEnteredTheSubject(String subject) {
         contactUsPage.enterSubject(subject);
@@ -54,6 +53,4 @@ public class ContactUsFormSteps {
     public void iShouldSeeTheVerificationMessageSuccessYourDetailsHaveBeenSubmitterSuccessfully(){
         MatcherAssert.assertThat(contactUsPage.getConfirmationMessage(), Matchers.is(true));
     }
-
-
 }

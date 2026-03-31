@@ -3,8 +3,12 @@ package webtests.pages;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.actions.Scroll;
+import net.serenitybdd.screenplay.actions.ScrollTo;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
+import org.openqa.selenium.JavascriptExecutor;
 
 import java.util.List;
 
@@ -58,6 +62,11 @@ public class HomePageRafid extends PageObject {
 
     @FindBy(css = "button.close-modal")
     private WebElementFacade continueShoppingButton;
+    @FindBy(id = "scrollUp")
+    private WebElementFacade scrollUp;
+
+    @FindBy(id = "header")
+    private WebElementFacade header;
 
     @FindBy(xpath = "//p[text()='Men Tshirt']/ancestor::div[@class='product-image-wrapper']//a[contains(@class,'add-to-cart')]")
     private WebElementFacade menTshirtAddToCartButton;
@@ -164,6 +173,13 @@ public class HomePageRafid extends PageObject {
 
     public void clickContinueShopping() {
         continueShoppingButton.waitUntilClickable().click();
+
+    public void clickScrollUpButton() {
+        scrollUp.click();
+    }
+
+    public boolean isHeaderVisible(){
+        return header.isDisplayed();
     }
     public void clickMenTshirtAddToCart() {
         menTshirtAddToCartButton.waitUntilClickable().click();
