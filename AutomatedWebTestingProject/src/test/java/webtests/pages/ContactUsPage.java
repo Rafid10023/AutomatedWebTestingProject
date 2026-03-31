@@ -22,9 +22,6 @@ public class ContactUsPage extends PageObject {
     @FindBy(name = "message")
     private WebElementFacade messageField;
 
-    @FindBy(name = "upload_file")
-    private WebElementFacade chooseFileButton;
-
     @FindBy(name = "submit")
     private WebElementFacade submitButton;
 
