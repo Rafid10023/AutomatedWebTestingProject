@@ -16,19 +16,41 @@ public class LoginTests {
     LoginPage loginPage;
 
     @Test
-    public void successEnterUser(){
+    public void successEnterUser() {
         loginPage.open();
         loginPage.acceptConsentIfPresent();
         loginPage.enterEmailLogin("Rafiduddin18@gmail.com");
-        loginPage.enterPass("zxcvasdf123");
-        loginPage.loginButton();
-
+        loginPage.enterPass("sdfighoias");
+        loginPage.clickLoginButton();
+        loginPage.getErrorMessage();
 
         MatcherAssert.assertThat(
                 loginPage.isLogoutVisible(),
                 Matchers.is(true)
         );
 
+            MatcherAssert.assertThat(loginPage.getErrorMessage(), Matchers.is("Your email or password is incorrect!"));
+
     }
 
+
+    @Test
+    public void logoutTest(){
+        // Step 1: Login
+        loginPage.open();
+        loginPage.acceptConsentIfPresent();
+
+        loginPage.enterEmailLogin("Rafiduddin18@gmail.com");
+        loginPage.enterPass("zxcvasdf123");
+        loginPage.clickLoginButton();
+
+        // Step 2: Logout
+        loginPage.clickLogout();
+
+        // Step 3: Verify user is logged out
+        MatcherAssert.assertThat(
+                loginPage.isLoginFieldVisible(),
+                Matchers.is(true)
+        );
+    }
 }
