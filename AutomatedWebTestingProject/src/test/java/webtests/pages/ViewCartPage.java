@@ -24,6 +24,15 @@ public class ViewCartPage extends PageObject {
     @FindBy(id = "cart_info_table")
     private WebElementFacade shoppingCart;
 
+    @FindBy(id = "susbscribe_email")
+    private WebElementFacade subscriptionEmailInput;
+
+    @FindBy(id = "subscribe")
+    private WebElementFacade subscribeButton;
+
+    @FindBy(css = "div.alert-success")
+    private WebElementFacade successMessage;
+
     public void acceptConsentIfPresent() {
         try {
             if (consentButton.isCurrentlyVisible()) {
@@ -37,5 +46,23 @@ public class ViewCartPage extends PageObject {
     public void checkoutButton() { checkoutButton.click(); }
 
     public boolean cartIsEmpty() { return emptyCart.isDisplayed(); }
+
+    public void enterSubscriptionEmail(String email) {
+        evaluateJavascript("window.scrollTo(0, document.body.scrollHeight);");
+        subscriptionEmailInput.type(email);
+    }
+
+    public void clickSubscribeButton() {
+        subscribeButton.waitUntilClickable().click();
+    }
+
+    public boolean didSubscriptionSucceed() {
+        try {
+            return successMessage.waitUntilVisible()
+                    .containsText("successfully subscribed");
+        } catch (Exception e) {
+            return false;
+        }
+    }
 
 }

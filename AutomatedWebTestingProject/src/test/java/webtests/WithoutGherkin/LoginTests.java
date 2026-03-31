@@ -13,19 +13,23 @@ import webtests.pages.LoginPage;
 @ExtendWith(SerenityJUnit5Extension.class)
 public class LoginTests {
 
-    @Managed
+
     HomePageRafid loginPage;
 
     @Test
     public void successEnterUser() {
         loginPage.open();
+        System.out.println("done 1");
         loginPage.acceptConsentIfPresent();
+        System.out.println("done 2");
         loginPage.enterEmailLogin("Rafiduddin18@gmail.com");
         loginPage.enterPass("sdfighoias");
         loginPage.clickLoginButton();
         loginPage.getErrorMessage();
         loginPage.enterSubscriptionEmail("rafiduddin18@gmail.com");
+        System.out.println("done 3");
         loginPage.clickSubscribeButton();
+        System.out.println("done 4");
 
 
         MatcherAssert.assertThat(
