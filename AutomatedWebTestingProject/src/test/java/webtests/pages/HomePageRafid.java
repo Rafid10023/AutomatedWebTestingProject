@@ -3,8 +3,12 @@ package webtests.pages;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.actions.Scroll;
+import net.serenitybdd.screenplay.actions.ScrollTo;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
+import org.openqa.selenium.JavascriptExecutor;
 
 @DefaultUrl("https://automationexercise.com/")
 public class HomePageRafid extends PageObject {
@@ -38,6 +42,12 @@ public class HomePageRafid extends PageObject {
 
     @FindBy(css = "div.alert-success")
     private WebElementFacade successMessage;
+
+    @FindBy(id = "scrollUp")
+    private WebElementFacade scrollUp;
+
+    @FindBy(id = "header")
+    private WebElementFacade header;
 
     public void acceptConsentIfPresent() {
         try {
@@ -109,5 +119,13 @@ public class HomePageRafid extends PageObject {
         } catch (Exception e) {
             return false;
         }
+    }
+
+    public void clickScrollUpButton() {
+        scrollUp.click();
+    }
+
+    public boolean isHeaderVisible(){
+        return header.isDisplayed();
     }
 }
