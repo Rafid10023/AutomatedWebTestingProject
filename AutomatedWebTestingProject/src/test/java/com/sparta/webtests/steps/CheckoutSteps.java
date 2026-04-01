@@ -8,7 +8,6 @@ import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Managed;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
-import webtests.pages.*;
 
 public class CheckoutSteps {
     @Managed
