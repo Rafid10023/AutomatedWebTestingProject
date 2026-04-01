@@ -1,4 +1,6 @@
-target/
+target/generated-test-sources/
+target/site/
+target/test-classes/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
