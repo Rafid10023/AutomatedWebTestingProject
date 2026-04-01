@@ -32,6 +32,10 @@ jobs:
     - name: Run Serenity Cucumber tests
       run: mvn clean verify -Dtest=TestRunner
 
+    - name: Generate Serenity report
+      run: mvn serenity:aggregate
+
+
     - name: Upload Serenity Report
       if: always()
       uses: actions/upload-artifact@v4
