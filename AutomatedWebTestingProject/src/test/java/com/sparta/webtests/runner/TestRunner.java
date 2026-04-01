@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
         features = "src/test/resources/features",
-        glue = "webtests.steps",
+        glue = "com.sparta.webtests.steps",
 //        tags = "@Happy",
         plugin = {
                 "pretty",

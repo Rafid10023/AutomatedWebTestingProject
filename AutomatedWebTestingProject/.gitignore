@@ -3,7 +3,7 @@
 !**/src/test/**/target/
 .kotlin
 
-target/site/serenity/
+target/
 
 
 ### IntelliJ IDEA ###

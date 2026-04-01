@@ -46,7 +46,7 @@ public class ContactUsFormSteps {
 
     @And("I click the OK button")
     public void iClickTheOKButton() {
-        contactUsPage.accecptAlert();
+        contactUsPage.acceptAlert();
     }
 
     @Then("I should see the verification message \"Success! Your details have been submitter successfully'")

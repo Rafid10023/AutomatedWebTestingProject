@@ -61,7 +61,7 @@ public class ContactUsPage extends PageObject {
         submitButton.click();
     }
 
-    public void accecptAlert() {
+    public void acceptAlert() {
         Alert alert = getDriver().switchTo().alert();
         alert.accept();
     }
