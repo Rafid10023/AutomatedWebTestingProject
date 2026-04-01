@@ -35,7 +35,7 @@ jobs:
       uses: nanasess/setup-chromedriver@v2
 
     - name: Run Serenity Cucumber tests
-      run: mvn -f AutomatedWebTestingProject/pom.xml clean verify -Dtest=TestRunner
+      run: mvn clean verify -Dtest=TestRunner
 
     - name: Upload Serenity Report
       if: always()
