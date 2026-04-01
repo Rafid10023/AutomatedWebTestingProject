@@ -2,9 +2,9 @@
 !**/src/main/**/target/
 !**/src/test/**/target/
 .kotlin
-target/generated-test-sources/
+
 target/site/serenity/
-target/test-classes/
+
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
