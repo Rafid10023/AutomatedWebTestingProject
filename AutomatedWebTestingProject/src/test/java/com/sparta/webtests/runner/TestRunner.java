@@ -1,4 +1,4 @@
-package webtests.runner;
+package com.sparta.webtests.runner;
 
 
 

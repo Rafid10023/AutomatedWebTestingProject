@@ -1,6 +1,6 @@
-package webtests.steps;
+package com.sparta.webtests.steps;
 
-import io.cucumber.java.PendingException;
+import com.sparta.webtests.pages.*;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

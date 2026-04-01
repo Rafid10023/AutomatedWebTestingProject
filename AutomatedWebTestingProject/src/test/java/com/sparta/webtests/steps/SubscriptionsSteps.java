@@ -1,16 +1,12 @@
-package webtests.steps;
+package com.sparta.webtests.steps;
 
-import io.cucumber.java.PendingException;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Managed;
-import org.hamcrest.MatcherAssert;
-import org.hamcrest.Matchers;
-import webtests.pages.ContactUsPage;
-import webtests.pages.HomePageRafid;
-import webtests.pages.ViewCartPage;
+import com.sparta.webtests.pages.HomePageRafid;
+import com.sparta.webtests.pages.ViewCartPage;
 
 public class SubscriptionsSteps {
 

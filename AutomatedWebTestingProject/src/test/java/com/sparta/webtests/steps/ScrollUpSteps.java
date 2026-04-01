@@ -1,6 +1,5 @@
-package webtests.steps;
+package com.sparta.webtests.steps;
 
-import io.cucumber.java.PendingException;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -10,8 +9,7 @@ import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.interactions.Actions;
-import webtests.pages.HomePageRafid;
+import com.sparta.webtests.pages.HomePageRafid;
 
 public class ScrollUpSteps {
     @Managed

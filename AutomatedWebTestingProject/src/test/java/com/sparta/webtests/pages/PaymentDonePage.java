@@ -1,4 +1,4 @@
-package webtests.pages;
+package com.sparta.webtests.pages;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;

@@ -1,4 +1,4 @@
-package webtests.steps;
+package com.sparta.webtests.steps;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -7,7 +7,7 @@ import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Managed;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
-import webtests.pages.ContactUsPage;
+import com.sparta.webtests.pages.ContactUsPage;
 
 public class ContactUsFormSteps {
     @Managed
