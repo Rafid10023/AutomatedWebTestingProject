@@ -9,12 +9,12 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com.sparta.webtests.steps",
         plugin = {
-                "pretty",
-                "html:target/testReport.html",
-                "json:target/testReport.json"
+                "pretty"
+                //"html:target/testReport.html",
+                //"json:target/testReport.json"
 
-        },
-        publish = true
+        }
+        //publish = true
 )
-public class CucumberTestSuite {
+public class CucumberRunnerTest {
 }
