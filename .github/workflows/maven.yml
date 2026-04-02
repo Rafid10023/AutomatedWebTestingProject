@@ -14,6 +14,9 @@ jobs:
       run:
         working-directory: AutomatedWebTestingProject
 
+    env:
+      MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"    
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
@@ -30,7 +33,7 @@ jobs:
       uses: nanasess/setup-chromedriver@v2
 
     - name: Run Serenity Cucumber tests
-      run: mvn clean verify -Dtest=CucumberTestSuite
+      run: mvn -B clean verify -Dtest=CucumberTestSuite
 
     - name: Generate Serenity report
       run: mvn serenity:aggregate
