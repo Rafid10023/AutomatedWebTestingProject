@@ -1,7 +1,5 @@
 package com.sparta.webtests.runner;
 
-
-
 import io.cucumber.junit.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
 import org.junit.runner.RunWith;
@@ -10,7 +8,6 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "com.sparta.webtests.steps",
-//        tags = "@Happy",
         plugin = {
                 "pretty",
                 "html:target/testReport.html",
@@ -19,5 +16,5 @@ import org.junit.runner.RunWith;
         },
         publish = true
 )
-public class CucumberRunnerTest {
+public class CucumberTestSuite {
 }
