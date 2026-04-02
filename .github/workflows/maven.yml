@@ -33,7 +33,7 @@ jobs:
       uses: nanasess/setup-chromedriver@v2
 
     - name: Run Serenity Cucumber tests
-      run: mvn -B clean verify -Dtest=CucumberTestSuite
+      run: mvn -B clean verify -Dtest=CucumberRunnerTest
 
     - name: Generate Serenity report
       run: mvn serenity:aggregate
@@ -43,4 +43,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: serenity-report
-        path: AutomatedWebTestingProject/target/site/serenity
+        path: AutomatedWebTestingProject/target
