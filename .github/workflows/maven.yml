@@ -32,6 +32,9 @@ jobs:
     - name: Run Serenity Cucumber tests
       run: mvn clean verify -Dtest=CucumberRunnerTest
 
+    - name: check for runner class
+      run: mvn -X test
+
     - name: Generate Serenity report
       run: mvn serenity:aggregate
 
